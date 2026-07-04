@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The Vault — Travel Through Time</title>
+<title>Time Vault — Eat, Drink & Play Your Way Through Time</title>
+<link rel="icon" href="timevault-icon.png"/>
 <style>
-  :root{--red:#d32f2f;--brass:#c9a227;--bg:#0d0e11;--card:#16181d;--line:#282b32;--txt:#e8e8ea;--mut:#9aa0a6;}
+  :root{--red:#d32f2f;--gold:#c9a04a;--brass:#a97c2e;--gun:#34383e;--bg:#141619;--card:#1e2126;--line:#34383e;--txt:#ece7db;--mut:#9aa0a6;--cream:#e8d5b2;}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
@@ -13,46 +14,40 @@
   section{padding:64px 0;border-bottom:1px solid var(--line)}
   h2{font-size:1.5rem;letter-spacing:.3px;margin-bottom:6px}
   h2 .a{color:var(--red)}
-  .kicker{color:var(--brass);font-size:.78rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
-  p{color:#d7d9dd;margin:10px 0}
+  .kicker{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
+  p{color:#d7d5cc;margin:10px 0}
   .mut{color:var(--mut)}
-  /* HERO */
   .hero{min-height:96vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:none;
-    background:radial-gradient(1100px 600px at 50% 12%,#1c1f27 0%,#0d0e11 62%)}
-  .hero img{width:min(58vw,340px);filter:drop-shadow(0 18px 40px rgba(0,0,0,.6))}
-  .hero h1{font-size:clamp(2.6rem,10vw,5.2rem);letter-spacing:.12em;margin-top:18px;font-weight:800}
-  .hero h1 .a{color:var(--brass)}
-  .tag{color:var(--red);font-size:clamp(1rem,3.4vw,1.5rem);letter-spacing:.32em;text-transform:uppercase;font-weight:700;margin-top:2px}
-  .sub{color:var(--mut);max-width:640px;margin:18px auto 0;font-size:1.05rem}
-  .scroll{margin-top:34px;color:var(--brass);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
-  /* eras */
+    background:radial-gradient(1100px 640px at 50% 14%,#22262e 0%,#141619 62%)}
+  .hero .herologo{width:min(74vw,420px);filter:drop-shadow(0 20px 44px rgba(0,0,0,.65))}
+  .tag{color:var(--red);font-size:clamp(1rem,3.4vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:26px}
+  .sub{color:var(--cream);max-width:640px;margin:16px auto 0;font-size:1.05rem;opacity:.85}
+  .scroll{margin-top:34px;color:var(--gold);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
   .eras{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}
   @media(max-width:720px){.eras{grid-template-columns:repeat(2,1fr)}}
   .era{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center}
   .era .n{font-weight:800;font-size:.95rem}
   .era .d{color:var(--mut);font-size:.76rem;margin-top:4px}
-  /* feature grid */
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
   @media(max-width:720px){.grid{grid-template-columns:1fr}}
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
   .card h3{font-size:1.05rem;margin-bottom:6px}
-  .card h3 .a{color:var(--brass)}
+  .card h3 .a{color:var(--gold)}
   .card p{font-size:.94rem;margin:4px 0 0}
-  /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
   @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
   .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
-  .stat .v{font-size:1.5rem;font-weight:800;color:var(--brass)}
+  .stat .v{font-size:1.5rem;font-weight:800;color:var(--gold)}
   .stat .l{color:var(--mut);font-size:.74rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
   .plan img{width:100%;border-radius:14px;border:1px solid var(--line);margin-top:16px}
   ul.clean{list-style:none;margin-top:14px}
-  ul.clean li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line);color:#d7d9dd}
+  ul.clean li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line);color:#d7d5cc}
   ul.clean li:before{content:"";position:absolute;left:2px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--red)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
   @media(max-width:720px){.two{grid-template-columns:1fr}}
   .cta{text-align:center;padding:72px 0}
   .cta h2{font-size:1.8rem}
-  .cta .line{color:var(--brass);letter-spacing:.28em;text-transform:uppercase;font-weight:700;margin-top:10px;font-size:.85rem}
+  .cta .line{color:var(--gold);letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin-top:10px;font-size:.85rem}
   footer{padding:30px 0;text-align:center;color:var(--mut);font-size:.8rem}
   .badge{display:inline-block;background:rgba(211,47,47,.12);border:1px solid rgba(211,47,47,.4);color:#ff8a80;border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
 </style>
@@ -60,16 +55,15 @@
 <body>
 
 <header class="hero">
-  <img src="vault_door.png" alt="The Vault door"/>
-  <h1>THE <span class="a">VAULT</span></h1>
-  <div class="tag">Travel Through Time</div>
+  <img class="herologo" src="timevault-logo.png" alt="Time Vault"/>
+  <div class="tag">Eat, Drink &amp; Play Your Way Through Time</div>
   <div class="sub">A next-generation competitive-socializing venue — and a year-round entertainment anchor for the district.</div>
   <div class="scroll">scroll to explore &darr;</div>
 </header>
 
 <section><div class="wrap">
   <div class="kicker">The Concept</div>
-  <h2>Five eras. One <span class="a">Vault</span>.</h2>
+  <h2>Five eras. One <span class="a">vault</span>.</h2>
   <p>Guests travel through five themed era neighborhoods — 40 to 45 custom challenge games — wrapped around a full scratch kitchen and bar. Grab a wristband and play all-access, or just come to eat and drink. A signature feature <b>auto-pauses your game clock while you eat</b>, so a meal never costs you play time. Nobody else does this.</p>
   <div class="eras">
     <div class="era"><div class="n">Steampunk</div><div class="d">Victorian</div></div>
@@ -111,7 +105,7 @@
     <div class="stat"><div class="v">$50M</div><div class="l">Level 99 raise (Panera founder)</div></div>
     <div class="stat"><div class="v">$11–12M</div><div class="l">Puttshack revenue / venue</div></div>
     <div class="stat"><div class="v">60–79%</div><div class="l">F&amp;B share of revenue</div></div>
-    <div class="stat"><div class="v">$5.4–8M</div><div class="l">The Vault target range</div></div>
+    <div class="stat"><div class="v">$5.4–8M</div><div class="l">Time Vault target range</div></div>
   </div>
   <p class="mut" style="margin-top:16px">A financially strong, high-margin tenant that pays rent and lasts — built around a real scratch kitchen and full bar, not a snack counter.</p>
 </div></section>
@@ -120,7 +114,7 @@
   <div class="kicker">The Floor Plan</div>
   <h2>Designed for <span class="a">flow</span> and flexibility.</h2>
   <p>Central kitchen and oval bar, themed neighborhoods wrapping the floor, open teaser games at the door, and combinable switch-glass VIP suites that flip private for corporate events — or open as overflow games on busy game days.</p>
-  <img src="TheVault-Layout-v2.jpg" alt="The Vault floor plan"/>
+  <img src="TheVault-Layout-v2.jpg" alt="Time Vault floor plan"/>
   <p class="mut" style="margin-top:10px">Space-planning concept — an architect formalizes the final drawings.</p>
 </div></section>
 
@@ -131,16 +125,16 @@
     <div class="card"><h3>I <span class="a">bring</span></h3><p>The concept, the build capability, the proprietary game and RFID tech, the Time Bandit brand and IP, and interested capital.</p></div>
     <div class="card"><h3>From <span class="a">you</span></h3><p>The right space in the district — roughly 16,000 to 20,000 sq ft, delivered as a shell with good clear height and power. And a conversation about a tenant-improvement allowance.</p></div>
   </div>
-  <p style="margin-top:16px"><b>Flexible footprint:</b> we propose 16,000 sq ft — and if you can offer more, it becomes <span style="color:var(--brass)">more games, more attraction, more draw</span> for the district. Never a bigger restaurant.</p>
+  <p style="margin-top:16px"><b>Flexible footprint:</b> we propose 16,000 sq ft — and if you can offer more, it becomes <span style="color:var(--gold)">more games, more attraction, more draw</span> for the district. Never a bigger restaurant.</p>
 </div></section>
 
 <div class="cta wrap">
   <div class="badge">Time Bandit Entertainment</div>
-  <h2>Let's build the ultimate <span style="color:var(--brass)">experiential playground</span>.</h2>
-  <div class="line">The Vault — where every era is a world</div>
+  <h2>Let's build the ultimate <span style="color:var(--gold)">experiential playground</span>.</h2>
+  <div class="line">Time Vault — where every era is a world</div>
 </div>
 
-<footer>The Vault &middot; a Time Bandit Entertainment concept &middot; Mesa, AZ &nbsp;|&nbsp; concept presentation</footer>
+<footer>Time Vault &middot; a Time Bandit Entertainment concept &middot; Mesa, AZ &nbsp;|&nbsp; concept presentation</footer>
 
 </body>
 </html>
