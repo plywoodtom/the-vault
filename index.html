@@ -6,7 +6,11 @@
 <title>Time Vault — Eat, Drink & Play Your Way Through Time</title>
 <link rel="icon" href="timevault-icon.png"/>
 <style>
-  :root{--red:#d32f2f;--gold:#c9a04a;--brass:#a97c2e;--gun:#34383e;--bg:#141619;--card:#1e2126;--line:#34383e;--txt:#ece7db;--mut:#9aa0a6;--cream:#e8d5b2;}
+  :root{--red:#d32f2f;--gold:#c9a04a;--brass:#a97c2e;--gun:#34383e;--bg:#141619;--card:#1e2126;--line:#34383e;--txt:#ece7db;--mut:#9aa0a6;--cream:#e8d5b2;
+    /* Time Bandit signature 8-sided metallic frame */
+    --oct-out:polygon(14px 0%,calc(100% - 14px) 0%,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0% calc(100% - 14px),0% 14px);
+    --oct-in:polygon(13px 0%,calc(100% - 13px) 0%,100% 13px,100% calc(100% - 13px),calc(100% - 13px) 100%,13px 100%,0% calc(100% - 13px),0% 13px);
+    --metal:linear-gradient(145deg,#e8e8e8 0%,#b0b0b0 30%,#787878 70%,#b8b8b8 100%);}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
@@ -25,18 +29,30 @@
   .scroll{margin-top:34px;color:var(--gold);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
   .eras{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}
   @media(max-width:720px){.eras{grid-template-columns:repeat(2,1fr)}}
-  .era{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 12px;text-align:center}
-  .era .n{font-weight:800;font-size:.95rem}
+  .era{position:relative;background:var(--metal);clip-path:var(--oct-out);padding:16px 12px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+  .era::before{content:"";position:absolute;inset:2px;background:var(--fill,var(--card));clip-path:var(--oct-in);z-index:0}
+  .era>*{position:relative;z-index:1}
+  .era .n{font-weight:800;font-size:.95rem;color:var(--acc,var(--txt))}
   .era .d{color:var(--mut);font-size:.76rem;margin-top:4px}
+  /* per-district accent metallic frames */
+  .era.steam {--metal:linear-gradient(145deg,#d7a878 0%,#8c5a3c 45%,#3f2718 100%);--acc:#e0a066;--fill:radial-gradient(120% 130% at 50% 0%,rgba(140,90,60,.22),var(--card) 62%)}
+  .era.cyber {--metal:linear-gradient(145deg,#a6f2fb 0%,#25d3e8 45%,#0c5d68 100%);--acc:#4fdcee;--fill:radial-gradient(120% 130% at 50% 0%,rgba(37,211,232,.16),var(--card) 62%)}
+  .era.west  {--metal:linear-gradient(145deg,#e6c274 0%,#c9922e 45%,#6a4a12 100%);--acc:#e0b053;--fill:radial-gradient(120% 130% at 50% 0%,rgba(201,146,46,.20),var(--card) 62%)}
+  .era.arcade{--metal:linear-gradient(145deg,#f6a7e2 0%,#e94bc7 45%,#7a1f66 100%);--acc:#f06ad2;--fill:radial-gradient(120% 130% at 50% 0%,rgba(233,75,199,.16),var(--card) 62%)}
+  .era.midway{--metal:linear-gradient(145deg,#f0968f 0%,#d6453d 45%,#75201c 100%);--acc:#e86b63;--fill:radial-gradient(120% 130% at 50% 0%,rgba(214,69,61,.20),var(--card) 62%)}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
   @media(max-width:720px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card{position:relative;background:var(--metal);clip-path:var(--oct-out);padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+  .card::before{content:"";position:absolute;inset:2px;background:var(--card);clip-path:var(--oct-in);z-index:0}
+  .card>*{position:relative;z-index:1}
   .card h3{font-size:1.05rem;margin-bottom:6px}
   .card h3 .a{color:var(--gold)}
   .card p{font-size:.94rem;margin:4px 0 0}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
   @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+  .stat{position:relative;background:var(--metal);clip-path:var(--oct-out);padding:16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+  .stat::before{content:"";position:absolute;inset:2px;background:var(--card);clip-path:var(--oct-in);z-index:0}
+  .stat>*{position:relative;z-index:1}
   .stat .v{font-size:1.5rem;font-weight:800;color:var(--gold)}
   .stat .l{color:var(--mut);font-size:.74rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
   .plan img{width:100%;border-radius:14px;border:1px solid var(--line);margin-top:16px}
@@ -66,11 +82,11 @@
   <h2>Five eras. One <span class="a">vault</span>.</h2>
   <p>Guests travel through five themed era neighborhoods — 40 to 45 custom challenge games — wrapped around a full scratch kitchen and bar. Grab a wristband and play all-access, or just come to eat and drink. A signature feature <b>auto-pauses your game clock while you eat</b>, so a meal never costs you play time. Nobody else does this.</p>
   <div class="eras">
-    <div class="era"><div class="n">Steampunk</div><div class="d">Victorian</div></div>
-    <div class="era"><div class="n">Cyberpunk</div><div class="d">Neon future</div></div>
-    <div class="era"><div class="n">Wild West</div><div class="d">Saloon</div></div>
-    <div class="era"><div class="n">80s Arcade</div><div class="d">8-bit / synthwave</div></div>
-    <div class="era"><div class="n">Midway</div><div class="d">Carnival</div></div>
+    <div class="era steam"><div class="n">Steampunk</div><div class="d">Victorian</div></div>
+    <div class="era cyber"><div class="n">Cyberpunk</div><div class="d">Neon future</div></div>
+    <div class="era west"><div class="n">Wild West</div><div class="d">Saloon</div></div>
+    <div class="era arcade"><div class="n">80s Arcade</div><div class="d">8-bit / synthwave</div></div>
+    <div class="era midway"><div class="n">Midway</div><div class="d">Carnival</div></div>
   </div>
   <p class="mut" style="margin-top:16px">Eat your way through time — a chef-driven themed menu and craft bar in the heart of the venue.</p>
 </div></section>
