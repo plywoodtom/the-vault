@@ -4,6 +4,13 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Time Vault — Eat, Drink & Play Your Way Through Time</title>
+<meta name="description" content="Time Vault — a 20,000 sq ft competitive-entertainment anchor proposed for Mesa's Palo District: 40–45 challenge games across five themed eras, wrapped around a chef-driven kitchen and bar. A Time Bandit Entertainment concept."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Time Vault — Eat, Drink &amp; Play Your Way Through Time"/>
+<meta property="og:description" content="A 20,000 sq ft competitive-entertainment anchor proposed for Mesa's Palo District: 40–45 challenge games across five themed eras, wrapped around a chef-driven kitchen and bar."/>
+<meta property="og:url" content="https://plywoodtom.github.io/the-vault/"/>
+<meta property="og:image" content="https://plywoodtom.github.io/the-vault/og-cover.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <link rel="icon" href="timevault-icon.png"/>
 <style>
   :root{--red:#d32f2f;--gold:#c9a04a;--brass:#a97c2e;--gun:#34383e;--bg:#141619;--card:#1e2126;--line:#34383e;--txt:#ece7db;--mut:#9aa0a6;--cream:#e8d5b2;
@@ -18,22 +25,24 @@
   section{padding:64px 0;border-bottom:1px solid var(--line)}
   h2{font-size:1.5rem;letter-spacing:.3px;margin-bottom:6px}
   h2 .a{color:var(--red)}
-  .kicker{color:var(--gold);font-size:.78rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
+  .kicker{color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
   p{color:#d7d5cc;margin:10px 0}
   .mut{color:var(--mut)}
   .hero{min-height:96vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:none;
     background:radial-gradient(1100px 640px at 50% 14%,#22262e 0%,#141619 62%)}
+  .hero .district{color:var(--mut);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
   .hero .herologo{width:min(74vw,420px);filter:drop-shadow(0 20px 44px rgba(0,0,0,.65))}
   .tag{color:var(--red);font-size:clamp(1rem,3.4vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:26px}
   .sub{color:var(--cream);max-width:640px;margin:16px auto 0;font-size:1.05rem;opacity:.85}
-  .scroll{margin-top:34px;color:var(--gold);font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+  .open-line{color:var(--gold);font-weight:700;letter-spacing:.06em;margin-top:18px;font-size:1.02rem}
+  .scroll{margin-top:30px;color:var(--gold);font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
   .eras{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}
   @media(max-width:720px){.eras{grid-template-columns:repeat(2,1fr)}}
   .era{position:relative;background:var(--metal);clip-path:var(--oct-out);padding:16px 12px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.45)}
   .era::before{content:"";position:absolute;inset:2px;background:var(--fill,var(--card));clip-path:var(--oct-in);z-index:0}
   .era>*{position:relative;z-index:1}
   .era .n{font-weight:800;font-size:.95rem;color:var(--acc,var(--txt))}
-  .era .d{color:var(--mut);font-size:.76rem;margin-top:4px}
+  .era .d{color:var(--mut);font-size:.82rem;margin-top:4px}
   /* per-district accent metallic frames */
   .era.steam {--metal:linear-gradient(145deg,#d7a878 0%,#8c5a3c 45%,#3f2718 100%);--acc:#e0a066;--fill:radial-gradient(120% 130% at 50% 0%,rgba(140,90,60,.22),var(--card) 62%)}
   .era.cyber {--metal:linear-gradient(145deg,#a6f2fb 0%,#25d3e8 45%,#0c5d68 100%);--acc:#4fdcee;--fill:radial-gradient(120% 130% at 50% 0%,rgba(37,211,232,.16),var(--card) 62%)}
@@ -54,7 +63,7 @@
   .stat::before{content:"";position:absolute;inset:2px;background:var(--card);clip-path:var(--oct-in);z-index:0}
   .stat>*{position:relative;z-index:1}
   .stat .v{font-size:1.5rem;font-weight:800;color:var(--gold)}
-  .stat .l{color:var(--mut);font-size:.74rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+  .stat .l{color:var(--mut);font-size:.8rem;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
   .plan img{width:100%;border-radius:14px;border:1px solid var(--line);margin-top:16px}
   ul.clean{list-style:none;margin-top:14px}
   ul.clean li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line);color:#d7d5cc}
@@ -64,8 +73,11 @@
   .cta{text-align:center;padding:72px 0}
   .cta h2{font-size:1.8rem}
   .cta .line{color:var(--gold);letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin-top:10px;font-size:.85rem}
-  footer{padding:30px 0;text-align:center;color:var(--mut);font-size:.8rem}
-  .badge{display:inline-block;background:rgba(211,47,47,.12);border:1px solid rgba(211,47,47,.4);color:#ff8a80;border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+  .contact{margin-top:28px;color:var(--txt);font-size:1rem;line-height:1.8}
+  .contact b{color:var(--cream)}
+  .contact a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,160,74,.4)}
+  footer{padding:30px 0;text-align:center;color:var(--mut);font-size:.85rem}
+  .badge{display:inline-block;background:rgba(211,47,47,.12);border:1px solid rgba(211,47,47,.4);color:#ff8a80;border-radius:20px;padding:5px 14px;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
   .wins{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;margin-top:18px}
   @media(max-width:720px){.wins{grid-template-columns:1fr}}
   .wins div{padding:10px 0 10px 30px;position:relative;color:#e8e3d8;font-weight:600;font-size:.98rem;border-bottom:1px solid var(--line)}
@@ -75,14 +87,17 @@
   .timeline{list-style:none;margin-top:18px;max-width:640px}
   .timeline li{position:relative;padding:12px 0 12px 44px;border-bottom:1px solid var(--line);color:#e8e3d8;font-weight:600;font-size:1rem}
   .timeline li:before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:27px;height:27px;background:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%23c9a04a'%3E%3Ccircle%20cx='12'%20cy='12'%20r='9.5'%20stroke-width='1.6'/%3E%3Ccircle%20cx='12'%20cy='12'%20r='1.3'%20fill='%23c9a04a'%20stroke='none'/%3E%3Cline%20x1='12'%20y1='12'%20x2='7.9'%20y2='9.3'%20stroke-width='1.5'%20stroke-linecap='round'/%3E%3Cline%20x1='12'%20y1='12'%20x2='16.6'%20y2='8.7'%20stroke-width='1.5'%20stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat}
+  .sources{color:var(--mut);font-size:.8rem;margin-top:14px}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <img class="herologo" src="timevault-logo.png" alt="Time Vault"/>
-  <div class="tag">Eat, Drink &amp; Play Your Way Through Time</div>
+  <div class="district">A concept for the Palo District &middot; Mesa, AZ</div>
+  <img class="herologo" src="timevault-logo.webp" alt="Time Vault logo — a vault door built into an antique clock face"/>
+  <h1 class="tag">Eat, Drink &amp; Play Your Way Through Time</h1>
   <div class="sub">The Palo District's signature competitive-entertainment destination — 40 to 45 challenge games across five themed eras, wrapped around a chef-driven kitchen and bar.</div>
+  <div class="open-line">We open with the stadium — targeting Palo District phase one, 2028.</div>
   <div class="scroll">scroll to explore &darr;</div>
 </header>
 
@@ -91,22 +106,18 @@
   <h2>Why Time Vault <span class="a">wins</span>.</h2>
   <div class="wins">
     <div>Theme-park-quality experiences</div>
-    <div>40 to 45 replayable challenge games</div>
-    <div>Central chef-driven kitchen &amp; bar</div>
+    <div>40 to 45 replayable challenge games in five themed eras</div>
+    <div>Chef-driven kitchen &amp; craft bar at the center</div>
     <div>Auto-pause game clock while you eat</div>
-    <div>Corporate events &amp; private buyouts</div>
-    <div>Birthday &amp; group destination</div>
-    <div>AI-personalized loyalty wristbands</div>
-    <div>All-weather, year-round draw</div>
-    <div>Built for repeat local visitation</div>
-    <div>Every zone is a photo moment</div>
+    <div>Corporate events, buyouts &amp; birthday groups</div>
+    <div>All-weather, year-round, repeat local draw</div>
   </div>
 </div></section>
 
 <section><div class="wrap">
   <div class="kicker">The Concept</div>
   <h2>Five eras. One <span class="a">vault</span>.</h2>
-  <p>Guests travel through five themed era neighborhoods — 40 to 45 custom challenge games — wrapped around a full scratch kitchen and bar. Grab a wristband and play all-access, or just come to eat and drink. A signature feature <b>auto-pauses your game clock while you eat</b>, so a meal never costs you play time. Nobody else does this.</p>
+  <p>Guests travel through five themed era neighborhoods — 40 to 45 custom challenge games — wrapped around a full scratch kitchen and bar. Grab a wristband and play all-access, or just come to eat and drink. A signature feature <b>auto-pauses your game clock while you eat</b>, so a meal never costs you play time — we haven't seen a competitor do it.</p>
   <div class="eras">
     <div class="era steam"><div class="n">Steampunk</div><div class="d">Victorian</div></div>
     <div class="era cyber"><div class="n">Cyberpunk</div><div class="d">Neon future</div></div>
@@ -114,7 +125,15 @@
     <div class="era arcade"><div class="n">80s Arcade</div><div class="d">8-bit / synthwave</div></div>
     <div class="era midway"><div class="n">Midway</div><div class="d">Carnival</div></div>
   </div>
-  <p class="mut" style="margin-top:16px">Eat your way through time — a chef-driven themed menu and craft bar in the heart of the venue.</p>
+  <!-- ERA GALLERY — uncomment when concept renders are ready. Name the files
+       era-steampunk.jpg, era-cyberpunk.jpg, era-west.jpg, era-arcade.jpg, era-midway.jpg
+  <div class="grid" style="margin-top:18px">
+    <img src="era-steampunk.jpg" alt="Steampunk era concept" style="width:100%;border-radius:12px;border:1px solid var(--line)"/>
+    <img src="era-cyberpunk.jpg" alt="Cyberpunk era concept" style="width:100%;border-radius:12px;border:1px solid var(--line)"/>
+  </div>
+  -->
+  <p style="margin-top:16px"><b>Planned pricing:</b> about $30 for 90 minutes or $40 for 2&frac12; hours of unlimited play — with weekday play-and-dine specials, slow-weekend passes, and dynamic pricing on event weekends.</p>
+  <p class="mut">Eat your way through time — a chef-driven themed menu and craft bar in the heart of the venue.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -125,7 +144,7 @@
     <li>Check in and grab your wristband</li>
     <li>Play challenges and bank your scores</li>
     <li>Check the leaderboard</li>
-    <li>Eat, drink, regroup</li>
+    <li>Eat, drink, regroup — clock paused</li>
     <li>Compete on more challenges</li>
     <li>Climb the ranks — then rebook</li>
   </ul>
@@ -137,24 +156,27 @@
   <p>Time Bandit Entertainment has spent 10+ years professionally designing, fabricating, and delivering experiential attractions <b>for other operators</b> — and we own the whole stack most operators piece together. Time Vault is us opening the flagship location for our own brand.</p>
   <div class="grid">
     <div class="card"><h3>The whole <span class="a">stack</span>, in-house</h3><p>We build the physical rooms, write the game-control and RFID software, and own the story and characters — most operators outsource one or two. That cuts cost and de-risks delivery.</p></div>
-    <div class="card"><h3>Building it <span class="a">right now</span></h3><p>We're delivering eleven original games plus the complete operating software for Explorium, a funded challenge arcade in Virginia — proof of this exact model, at scale, on a real budget and real deadlines.</p></div>
-    <div class="card"><h3>Built-in <span class="a">compliance</span></h3><p>We work directly with the author of the ADA accessibility laws — accessibility and inclusivity engineered in from day one, not bolted on later.</p></div>
-    <div class="card"><h3>Resources &amp; <span class="a">backing</span></h3><p>Build capability in place and private investors already interested in funding a venue of this type. The concept comes with the means to execute it.</p></div>
+    <div class="card"><h3>Building it <span class="a">right now</span></h3><p>We're delivering eleven original games plus the complete operating platform — RFID game access, leaderboards, loyalty, and database — for Explorium, a funded challenge-arcade entertainment center in Virginia opening late 2026. Games are in fabrication in our shop today.</p></div>
+    <div class="card"><h3>Built at <span class="a">commercial scale</span></h3><p>Our founder spent 2+ years on the fabrication team at Highway 85 Creative, a $12M/yr commercial fabricator of large trade-show and brand builds — and has built and serviced games for Bam Kazam, a Phoenix challenge arcade. We know what breaks under real guest load, and we build for it.</p></div>
+    <div class="card"><h3>Built-in <span class="a">compliance</span></h3><p>We work directly with Ollie Cantos, the U.S. Department of Justice attorney who co-authored the 2010 ADA regulations still in force today. He reviewed our Explorium games one by one — eight cleared city ADA approval with his guidance — and accessibility is engineered in from day one, not bolted on.</p></div>
+    <div class="card"><h3>F&amp;B partner — <span class="a">recruiting</span></h3><p>A scratch kitchen is its own craft. We're recruiting an experienced executive chef / F&amp;B operating partner to lead kitchen design, menu, bar program, and event catering from the first drawing forward.</p></div>
+    <div class="card"><h3>Resources &amp; <span class="a">backing</span></h3><p>Three private investors have independently offered to participate, and the founder is committing personal capital. We'll formalize the raise in parallel with site commitment — the site anchors the raise.</p></div>
   </div>
+  <p style="margin-top:16px" class="mut">Time Bandit runs the way commercial fabricators do: a founder-led core that scales with proven project crews per build.</p>
 </div></section>
 
 <section><div class="wrap">
   <div class="kicker">By the Numbers</div>
-  <h2>How it fits the <span class="a">Palo District</span>.</h2>
+  <h2>The venue at a <span class="a">glance</span>.</h2>
   <div class="metrics">
     <div class="stat"><div class="v">20,000</div><div class="l">Sq ft target footprint</div></div>
-    <div class="stat"><div class="v">40–45</div><div class="l">Challenge games</div></div>
-    <div class="stat"><div class="v">5</div><div class="l">Themed eras</div></div>
+    <div class="stat"><div class="v">40&ndash;45</div><div class="l">Challenge games</div></div>
     <div class="stat"><div class="v">150+</div><div class="l">Minute average visit</div></div>
     <div class="stat"><div class="v">$75+</div><div class="l">Target spend / guest</div></div>
     <div class="stat"><div class="v">Kitchen + Bar</div><div class="l">Full scratch F&amp;B</div></div>
+    <div class="stat"><div class="v">2028</div><div class="l">We open with the stadium</div></div>
   </div>
-  <p class="mut" style="margin-top:12px">Roughly $40 play + $35 food &amp; drink per guest — and with bar sales, food and beverage becomes the larger half of the mix.</p>
+  <p class="mut" style="margin-top:12px">Target ~$75 per guest — roughly $40 in play and $35 in food &amp; drink — with bar, events, and catering pushing F&amp;B toward the larger half of the mix.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -162,7 +184,8 @@
   <h2>The anchor a <span class="a">Theme Park District</span> was built for.</h2>
   <ul class="clean">
     <li><b>Built for a Theme Park District.</b> That designation exists to build an entertainment-centric district — and a catalytic, high-caliber interactive attraction is exactly what it calls for. We help deliver the vision, not just fill a box.</li>
-    <li><b>Feeds the captive crowds.</b> 600 hotel rooms of youth-soccer tournament families, sports-medicine researchers, and business travelers — plus stadium fans — are exactly our customer. After a game or a conference, they want group-friendly active fun.</li>
+    <li><b>Feeds the district's guests.</b> 600 hotel rooms of match-day fans, visiting teams and families, health-and-performance campus visitors, and conference travelers — after a match or a meeting, they're looking for group-friendly, active fun.</li>
+    <li><b>Matches the district's mission.</b> Palo is being built to champion women's sport. Competitive socializing is one of the few out-of-home formats with genuinely balanced appeal across gender and age — team-based, skill-based play for everyone in the stands, not another sports bar.</li>
     <li><b>Chef-driven dining that fills the off-hours.</b> A real scratch kitchen and craft bar — and because people come to play, we pull crowds well beyond the standard lunch-and-dinner windows.</li>
     <li><b>Tech-forward — and a living showcase.</b> A digitally-tracked, gamified experience on proprietary RFID, scoring, and booking tech. More than an anchor: a real, consumer-facing proving ground where the district's AI studio can put next-generation ideas in front of a paying crowd — the kind of venue you can walk investors through to see practical AI entertainment running live.</li>
     <li><b>Evergreen &amp; shareable.</b> Themed eras drive repeat visits, expand over time, and every zone is a photo moment — free marketing and foot traffic for the whole district.</li>
@@ -186,21 +209,22 @@
 <section><div class="wrap">
   <div class="kicker">A Proven Category</div>
   <h2>Competitive socializing is <span class="a">booming</span>.</h2>
-  <p>This isn't an experiment. It's the fastest-growing lane in out-of-home entertainment — the challenge-arcade format alone grew roughly 47% in the past year — and serious founder and institutional capital is pouring in. The winning model pairs games with a real kitchen and bar, where food and drink is the bigger half of revenue.</p>
+  <p>This isn't an experiment. The challenge-arcade format grew roughly 47% in the past year, and Activate alone added 20 locations in a single year — <b>with no food and beverage at all</b>. The winning model pairs games with a real kitchen and bar, where food and drink becomes the larger half of revenue. Level99 — whose Disney Springs flagship just opened — has raised $67M from Panera founder Ron Shaich's Act III after its first venues <b>doubled their projections</b>.</p>
   <div class="stats">
-    <div class="stat"><div class="v">$60M</div><div class="l">Level 99 backing (Panera founder)</div></div>
-    <div class="stat"><div class="v">$250M+</div><div class="l">Puttshack expansion capital</div></div>
-    <div class="stat"><div class="v">$11–12M</div><div class="l">Puttshack revenue / venue</div></div>
-    <div class="stat"><div class="v">$5.4–8M</div><div class="l">Time Vault target range</div></div>
+    <div class="stat"><div class="v">$67M</div><div class="l">Level99 raised (Panera founder's Act III)</div></div>
+    <div class="stat"><div class="v">$250M+</div><div class="l">Puttshack raised to date</div></div>
+    <div class="stat"><div class="v">$11&ndash;12M</div><div class="l">Puttshack revenue / venue</div></div>
+    <div class="stat"><div class="v">$5.4&ndash;8M</div><div class="l">Time Vault target range</div></div>
   </div>
   <p class="mut" style="margin-top:16px">A financially strong, high-margin tenant that pays rent and lasts — built around a real scratch kitchen and full bar, not a snack counter.</p>
+  <p class="sources">Sources: Room Escape Artist 2025 Escape Room Industry Report &middot; FSR Magazine &middot; PitchBook &middot; company announcements.</p>
 </div></section>
 
 <section class="plan"><div class="wrap">
   <div class="kicker">The Floor Plan</div>
   <h2>Designed for <span class="a">flow</span> and flexibility.</h2>
   <p>Central kitchen and oval bar, themed neighborhoods wrapping the floor, open teaser games at the door, and combinable switch-glass VIP suites that flip private for corporate events, open up as extra dining on busy game nights, or host the live game show on weekends.</p>
-  <img src="TheVault-Layout-v2.jpg" alt="Time Vault floor plan"/>
+  <img src="TimeVault-Layout-v3.jpg" alt="Time Vault floor plan — five themed game neighborhoods around a central kitchen, oval bar, dining, and VIP suites"/>
   <p class="mut" style="margin-top:10px">Space-planning concept — an architect formalizes the final drawings.</p>
 </div></section>
 
@@ -208,16 +232,23 @@
   <div class="kicker">The Partnership</div>
   <h2>What we bring / what we're <span class="a">looking for</span>.</h2>
   <div class="two">
-    <div class="card"><h3>We <span class="a">bring</span></h3><p>The concept, the build capability, the proprietary game and RFID tech, the Time Bandit brand and IP, and interested capital.</p></div>
-    <div class="card"><h3>From <span class="a">you</span></h3><p>The right space in the district — around 20,000 sq ft with good clear height and power.</p></div>
+    <div class="card"><h3>We <span class="a">bring</span></h3><p>The concept, the build capability, the proprietary game and RFID tech, the Time Bandit brand and IP, founder capital, and early investor interest.</p></div>
+    <div class="card"><h3>From <span class="a">you</span></h3><p>The right space in the district — around 20,000 sq ft with good clear height and power — and a tenant-improvement partnership.</p></div>
   </div>
-  <p style="margin-top:16px"><b>Flexible footprint:</b> we're planning around 20,000 sq ft — and if more is available, it becomes <span style="color:var(--gold)">more games, more attraction, and more draw</span> for the district, with room to scale dining and private events to match.</p>
+  <p style="margin-top:16px"><b>The numbers:</b> an estimated $2.8&ndash;4.9M buildout against a $5.4&ndash;8M annual revenue target. <b>The timeline:</b> we open with the stadium — alongside the district's 2028 phase one. Full pro forma, pricing model, and capital plan available under NDA.</p>
+  <p><b>Flexible footprint:</b> we're planning around 20,000 sq ft — and if more is available, it becomes <span style="color:var(--gold)">more games, more attraction, and more draw</span> for the district, with room to scale dining and private events to match.</p>
 </div></section>
 
 <div class="cta wrap">
   <div class="badge">Time Bandit Entertainment</div>
   <h2>Let's build the ultimate <span style="color:var(--gold)">experiential playground</span>.</h2>
   <div class="line">Time Vault — where every era is a world</div>
+  <div class="contact">
+    <b>Tom &middot; Founder, Time Bandit Entertainment LLC</b><!-- TODO: add last name -->
+    <br/><a href="mailto:plywoodtom@gmail.com">plywoodtom@gmail.com</a>
+    <!-- TODO: add phone, e.g. &nbsp;&middot;&nbsp; <a href="tel:+1480XXXXXXX">(480) XXX-XXXX</a> -->
+    <br/>Tempe, Arizona
+  </div>
 </div>
 
 <footer>Time Vault &middot; a Time Bandit Entertainment concept &middot; Mesa, AZ &nbsp;|&nbsp; concept presentation</footer>
