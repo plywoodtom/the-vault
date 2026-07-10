@@ -34,9 +34,15 @@
   p{color:#d7d5cc;margin:10px 0}
   .mut{color:var(--mut)}
   .hero{min-height:96vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:none;
-    background:radial-gradient(1100px 640px at 50% 14%,#22262e 0%,#141619 62%)}
-  .hero .district{color:var(--mut);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
-  .hero .herologo{width:min(74vw,420px);filter:drop-shadow(0 20px 44px rgba(0,0,0,.65))}
+    background:linear-gradient(rgba(9,10,12,.55),rgba(11,12,15,.82)),url("hero-bar.jpg") center/cover no-repeat}
+  .hero .district{color:#d7cfae;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
+  .hero .herologo{width:min(74vw,420px);filter:drop-shadow(0 20px 44px rgba(0,0,0,.85))}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  @media(max-width:720px){.gallery{grid-template-columns:1fr 1fr}}
+  .gallery figure{position:relative;margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/10}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 8px;font-family:var(--head);font-weight:700;color:#fff;font-size:1rem;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+  .rimg{width:100%;border-radius:14px;border:1px solid var(--line);margin-top:16px;display:block}
   .tag{color:var(--red);font-size:clamp(1rem,3.4vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:26px}
   .sub{color:var(--cream);max-width:640px;margin:16px auto 0;font-size:1.05rem;opacity:.85}
   .open-line{color:var(--gold);font-weight:700;letter-spacing:.06em;margin-top:18px;font-size:1.02rem}
@@ -130,13 +136,14 @@
     <div class="era arcade"><div class="n">8-Bit Era</div><div class="d">Life-size video games</div></div>
     <div class="era midway"><div class="n">Midway</div><div class="d">Carnival</div></div>
   </div>
-  <!-- ERA GALLERY — uncomment when concept renders are ready. Name the files
-       era-steampunk.jpg, era-cyberpunk.jpg, era-west.jpg, era-arcade.jpg, era-midway.jpg
-  <div class="grid" style="margin-top:18px">
-    <img src="era-steampunk.jpg" alt="Steampunk era concept" style="width:100%;border-radius:12px;border:1px solid var(--line)"/>
-    <img src="era-cyberpunk.jpg" alt="Cyberpunk era concept" style="width:100%;border-radius:12px;border:1px solid var(--line)"/>
+  <div class="gallery">
+    <figure><img src="era-steampunk.jpg" alt="Steampunk era — Victorian world with a full-size locomotive and airship" loading="lazy"/><figcaption>Steampunk</figcaption></figure>
+    <figure><img src="era-cyberpunk.jpg" alt="Cyberpunk era — neon-future arcade" loading="lazy"/><figcaption>Cyberpunk</figcaption></figure>
+    <figure><img src="era-west.jpg" alt="Wild West era — saloon street with game stations" loading="lazy"/><figcaption>Wild West</figcaption></figure>
+    <figure><img src="era-arcade.jpg" alt="80s Arcade era — neon synthwave arcade" loading="lazy"/><figcaption>8-Bit Arcade</figcaption></figure>
+    <figure><img src="era-midway.jpg" alt="Midway era — carnival games" loading="lazy"/><figcaption>Midway</figcaption></figure>
   </div>
-  -->
+  <p class="mut" style="margin-top:8px;font-size:.78rem">Concept renderings.</p>
   <p style="margin-top:16px"><b>Planned pricing:</b> about $30 for 90 minutes or $40 for 2&frac12; hours of unlimited play — with weekday play-and-dine specials, slow-weekend passes, and dynamic pricing on event weekends.</p>
   <p class="mut">Eat your way through time — a chef-driven themed menu and craft bar in the heart of the venue.</p>
 </div></section>
@@ -145,6 +152,7 @@
   <div class="kicker">The Guest Experience</div>
   <h2>The player <span class="a">visit timeline</span>.</h2>
   <p>Walk in, grab a wristband, and the whole visit is tracked — every score, every rank, every return.</p>
+  <img class="rimg" src="reception.jpg" alt="Time Vault reception — the clock-face vault door check-in desk" loading="lazy"/>
   <ul class="timeline">
     <li>Check in and grab your wristband</li>
     <li>Play challenges and bank your scores</li>
