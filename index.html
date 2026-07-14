@@ -276,5 +276,33 @@
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6777c75c57444ae08509dbeb5febdc4a"}'></script><!-- End Cloudflare Web Analytics -->
 
+<!-- Click-to-enlarge lightbox for the era gallery -->
+<style>
+  .gallery img{cursor:zoom-in;transition:transform .2s ease}
+  .gallery figure:hover img{transform:scale(1.04)}
+  #lightbox{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(10,11,13,.94);cursor:zoom-out;padding:24px}
+  #lightbox.on{display:flex}
+  #lightbox img{max-width:94vw;max-height:86vh;border-radius:10px;border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  #lightbox .cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:var(--cream);font-family:var(--head);font-size:1.05rem;letter-spacing:.05em}
+  #lightbox .x{position:absolute;top:16px;right:26px;color:#fff;font-size:2.2rem;line-height:1;opacity:.75;cursor:pointer}
+  #lightbox .x:hover{opacity:1}
+</style>
+<div id="lightbox" aria-hidden="true"><span class="x" aria-label="Close">&times;</span><img alt=""/><div class="cap"></div></div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'),img=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  document.querySelectorAll('.gallery figure img').forEach(function(t){
+    t.addEventListener('click',function(){
+      img.src=t.getAttribute('src'); img.alt=t.getAttribute('alt')||'';
+      var f=t.parentElement.querySelector('figcaption'); cap.textContent=f?f.textContent:'';
+      lb.classList.add('on'); lb.setAttribute('aria-hidden','false');
+    });
+  });
+  function close(){lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); img.src='';}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
 </body>
 </html>
